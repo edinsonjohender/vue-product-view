@@ -6,11 +6,33 @@
 
 <script>
 import MainView from './view/MainView.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
+  data(){
+      return {
+          info: ''
+      }
+  },
   components: {
     MainView
+  },
+  async fetch(){
+      console.log('asd')
+      //await store.dispatch('user/getUserOnline')
+      
+  },
+  created(){
+      console.log('created')
+
+  },
+  mounted () {
+    axios
+      .get('https://graditest-store.myshopify.com/products/free-trainer-3-mmw.js')
+      .then((res) =>{
+        console.log(res)
+      })
   }
 }
 </script>
