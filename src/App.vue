@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <MainView/>
-    <p>{{this.$store.state.product}}</p>
+    <!-- <p>{{this.$store.state.product}}</p> -->
   </div>
 </template>
 
@@ -33,4 +33,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

@@ -1,26 +1,24 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Vuex from 'vuex'
+import { BootstrapVue } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
 Vue.use (Vuex)
+Vue.use(BootstrapVue)
 
 // Create a new store instance.
 const store = new Vuex.Store({
   state () {
     return {
-      count: 69,
       product: {}
     }
   },
   mutations: {
-    increment (state) {
-      state.count++
-      console.log(state.count);
-    },
     setProduct (state, p) {
-      state.product = p
-      console.log(state.product);
+      state.product = p.data
     }
   }
 })

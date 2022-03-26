@@ -1,11 +1,15 @@
 <template>
-    <article class="product-info">
+    <article class="product-info col-lg-6 col-md-7 col-12">
         <p>Product Info</p>
-        <p>name</p>
-        <p>price</p>
+        <h1>{{this.$store.state.product.title}}</h1>
+        <b-row>
+        <h4>$ {{this.$store.state.product.price}}</h4>
+        <h5>$ {{this.$store.state.product.compare_at_price}}</h5>
+        </b-row>
         <QuantitySelector/>
         <ColorPicker/>
         <SizePicker/>
+        <p>{{this.$store.state.product.description}}</p>
     </article>
 </template>
 
