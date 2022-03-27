@@ -1,8 +1,9 @@
 <template>
   <section class="main-content">
-    <div class="row"></div>
-      <MainImage/>
-      <ProductInfo/>
+      <b-row>
+        <MainImage/>
+        <ProductInfo/> 
+      </b-row>
   </section>
 </template>
 
@@ -22,3 +23,9 @@ export default {
 }
 
 </script>
+<style>
+section.main-content {
+    margin: 7rem 20rem;
+}
+
+</style>

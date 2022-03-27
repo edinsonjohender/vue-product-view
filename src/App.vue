@@ -1,38 +1,25 @@
 <template>
   <div id="app">
     <MainView/>
+    <!-- <p>{{this.$store.state.product}}</p> -->
   </div>
 </template>
 
 <script>
-import MainView from './view/MainView.vue'
+
 import axios from 'axios'
+
+import MainView from './view/MainView.vue'
 
 export default {
   name: 'App',
-  data(){
-      return {
-          info: ''
-      }
-  },
   components: {
     MainView
-  },
-  async fetch(){
-      console.log('asd')
-      //await store.dispatch('user/getUserOnline')
-      
-  },
-  created(){
-      console.log('created')
-
   },
   mounted () {
     axios
       .get('https://graditest-store.myshopify.com/products/free-trainer-3-mmw.js')
-      .then((res) =>{
-        console.log(res)
-      })
+        .then((res) => {this.$store.commit('setProduct', res)})
   }
 }
 </script>
@@ -46,4 +33,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
