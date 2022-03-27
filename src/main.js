@@ -15,9 +15,8 @@ const store = new Vuex.Store({
     return {
       product   : {},
       cart      : [],
-      size      : '',
-      color     : '',
-      quantity  : '',
+      variants  : [],
+      quantity  : 0,
       mainImage : ''
     }
   },
@@ -28,6 +27,18 @@ const store = new Vuex.Store({
     },
     selectedImage(state, i){
       state.mainImage = i
+    },
+    selectVariant(state, [n, v]){
+      state.variants.filter((x) =>{
+        if(x.name == n){
+          state.variants.splice(state.variants.indexOf(x), 1);
+        }
+      })
+      state.variants.push({
+        name : n,
+        value: v
+      })
+      console.log(state.variants)
     }
   }
 })
