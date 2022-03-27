@@ -13,10 +13,12 @@ Vue.use(BootstrapVue)
 const store = new Vuex.Store({
   state () {
     return {
-      mainImage: '',
-      color: '',
-      size: '',
-      product: {}
+      product   : {},
+      cart      : [],
+      size      : '',
+      color     : '',
+      quantity  : '',
+      mainImage : ''
     }
   },
   mutations: {

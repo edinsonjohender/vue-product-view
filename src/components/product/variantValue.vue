@@ -1,13 +1,19 @@
 <template>
     <div class="product-info__size-picker">
-        <p>Size Picker</p>
+        <p>{{value}}</p>
     </div>
 </template>
 
 <script>
 
 export default {
-  name: 'SizePicker',
+  name: 'VariantValue',
+  props: {
+    value: {
+      type: String,
+      default: ''
+    }
+  },
   components: {}
 }
 </script>
