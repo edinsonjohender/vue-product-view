@@ -23,7 +23,7 @@ export default {
 
 .product-images__main-image{
   width:100%;
-  padding: 0 5px;
+  padding: 5px 0;
 }
 .product-images__main-image > img {
   width:100%;

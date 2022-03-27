@@ -14,6 +14,8 @@ const store = new Vuex.Store({
   state () {
     return {
       mainImage: '',
+      color: '',
+      size: '',
       product: {}
     }
   },

@@ -25,7 +25,8 @@ export default {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  margin-top: 5px;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
 }
 
 .grid-item {
@@ -35,7 +36,7 @@ export default {
     font-size: 25px;
     cursor: pointer;
     color: white;
-    margin: 5px;
+    gap: 0.5rem;;
     padding-top: 70%;
     background-position: center;
     background-size: cover;
