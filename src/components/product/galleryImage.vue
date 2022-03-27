@@ -12,23 +12,15 @@ export default {
       type: String
     }
   },
-  methods:{
-    selectImage(){
-      this.$store.commit('selectedImage', this.image)
-    }
-  },
-  computed: {
-    isSelected() {
-      return this.$store.state.mainImage === this.image ? true : false;
-    },
-  },
+  /// select [MainImage]
+  methods:{selectImage(){this.$store.commit('selectedImage', this.image)}},
+  /// hide [image] selected
+  computed: {isSelected() {return this.$store.state.mainImage === this.image ? true : false;},},
 }
 </script>
 
 <style>
-
 .display {
   display: none;
 }
-
 </style>

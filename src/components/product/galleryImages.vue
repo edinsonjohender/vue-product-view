@@ -16,8 +16,7 @@ export default {
   name: 'GalleryImages',
   components:{
     GalleryImage
-  },
-
+  }
 }
 </script>
 
