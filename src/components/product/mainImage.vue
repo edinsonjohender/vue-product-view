@@ -1,6 +1,8 @@
 <template>
     <article class="product-images  col-lg-6 col-md-5 col-12">
-        <img :src=this.$store.state.product.featured_image style="width:100%">
+      <div style="width:100%; ">
+        <img :src=this.$store.state.mainImage style="width:100%;  margin: 0 5px;">
+      </div>
         <Gallery/>
     </article>
 </template>

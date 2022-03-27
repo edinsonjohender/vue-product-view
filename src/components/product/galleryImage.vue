@@ -1,5 +1,5 @@
 <template>
-    <div class=" grid-item circular" v-bind:style="{ 'background-image': 'url(' + this.image + ')' }"></div>
+    <div :class="{ 'display': isSelected }" class=" grid-item circular" v-bind:style="{ 'background-image': 'url(' + this.image + ')'}" @click="selectImage()"></div>
 </template>
 
 <script>
@@ -10,7 +10,25 @@ export default {
   props: {
     image: {
       type: String
+    }
+  },
+  methods:{
+    selectImage(){
+      this.$store.commit('selectedImage', this.image)
+    }
+  },
+  computed: {
+    isSelected() {
+      return this.$store.state.mainImage === this.image ? true : false;
     },
   },
 }
 </script>
+
+<style>
+
+.display {
+  display: none;
+}
+
+</style>

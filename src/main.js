@@ -13,12 +13,17 @@ Vue.use(BootstrapVue)
 const store = new Vuex.Store({
   state () {
     return {
+      mainImage: '',
       product: {}
     }
   },
   mutations: {
     setProduct (state, p) {
-      state.product = p.data
+      state.mainImage = p.data.featured_image
+      state.product   = p.data
+    },
+    selectedImage(state, i){
+      state.mainImage = i
     }
   }
 })
