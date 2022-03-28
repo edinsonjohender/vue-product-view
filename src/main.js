@@ -16,18 +16,21 @@ const store = new Vuex.Store({
       product   : {},
       cart      : [],
       variants  : [],
-      quantity  : 0,
+      quantity  : 1,
       mainImage : ''
     }
   },
   mutations: {
+    /// set product info when page loads
     setProduct (state, p) {
       state.mainImage = p.data.featured_image
       state.product   = p.data
     },
+    /// shows the selected image
     selectedImage(state, i){
       state.mainImage = i
     },
+    /// this selects any variation of the product, it can be used for any type of variation (Color, Size, others)
     selectVariant(state, [n, v]){
       state.variants.filter((x) =>{
         if(x.name == n){
@@ -38,7 +41,6 @@ const store = new Vuex.Store({
         name : n,
         value: v
       })
-      console.log(state.variants)
     }
   }
 })

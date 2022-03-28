@@ -29,6 +29,7 @@ export default {
     VariantValue
   },
   methods: {
+    /// check if the variation is of type color
     isColor(){return this.option.name == 'Color' ? true : false},
   }
 }
@@ -36,14 +37,26 @@ export default {
 
 <style>
 
-.product-info__variant-options {
-    gap: 0.5rem;
+.product-info__variant-selector {
+  flex-flow: nowrap !important;
+  border-bottom: solid 2px #b9b8b8;
+  padding: 1rem 0;
+  max-width: 100%;
 }
+
 .product-info__variant-selector > * {
     width: auto !important;
+    align-items: center;
+    gap: 1rem;
 }
+.product-info__variant-selector > p {
+  min-width: 70px;
+  margin: 0;
+}
+
 .row.product-info__variant-options > * {
     width: auto !important;
+    
 }
 
 </style>

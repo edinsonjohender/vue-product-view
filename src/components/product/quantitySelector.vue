@@ -1,6 +1,10 @@
 <template>
     <div class="product-info__quantity-selector">
-        <p>Quantity Selector</p>
+        <div class="">
+          <b-button>-</b-button>
+          <p>{{this.$store.state.quantity}}</p>
+          <b-button>+</b-button>
+        </div>
     </div>
 </template>
 
