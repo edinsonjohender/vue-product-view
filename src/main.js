@@ -13,19 +13,38 @@ Vue.use(BootstrapVue)
 const store = new Vuex.Store({
   state () {
     return {
-      mainImage: '',
-      color: '',
-      size: '',
-      product: {}
+      product   : {},
+      cart      : [],
+      variants  : [],
+      quantity  : 1,
+      mainImage : ''
     }
   },
   mutations: {
+    /// set product info when page loads
     setProduct (state, p) {
       state.mainImage = p.data.featured_image
       state.product   = p.data
     },
+    /// shows the selected image
     selectedImage(state, i){
       state.mainImage = i
+    },
+    /// shows the selected image
+    setQuantity(state, q){
+      state.quantity = q
+    },
+    /// this selects any variation of the product, it can be used for any type of variation (Color, Size, others)
+    selectVariant(state, [n, v]){
+      state.variants.filter((x) =>{
+        if(x.name == n){
+          state.variants.splice(state.variants.indexOf(x), 1);
+        }
+      })
+      state.variants.push({
+        name : n,
+        value: v
+      })
     }
   }
 })

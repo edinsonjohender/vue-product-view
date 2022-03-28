@@ -10,11 +10,14 @@
           <h5>$ {{this.$store.state.product.compare_at_price}}</h5>
         </b-row>
 
+        <VariantSelector
+          v-for   ="(option, index) in this.$store.state.product.options"
+          :key    ="index"
+          :option ="option"
+        />
+
+
         <QuantitySelector/>
-
-        <ColorPicker/>
-
-        <SizePicker/>
 
         <p>{{this.$store.state.product.description}}</p>
     </article>
@@ -23,15 +26,13 @@
 <script>
 
 import QuantitySelector from './quantitySelector.vue'
-import SizePicker       from './sizePicker.vue'
-import ColorPicker      from './colorPicker.vue'
+import VariantSelector from './VariantSelector.vue'
 
 export default {
   name: 'ProductInfo',
   components: {
     QuantitySelector,
-    SizePicker,
-    ColorPicker
+    VariantSelector
   }
 }
 </script>
