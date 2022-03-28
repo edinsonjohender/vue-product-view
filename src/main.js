@@ -30,6 +30,10 @@ const store = new Vuex.Store({
     selectedImage(state, i){
       state.mainImage = i
     },
+    /// shows the selected image
+    setQuantity(state, q){
+      state.quantity = q
+    },
     /// this selects any variation of the product, it can be used for any type of variation (Color, Size, others)
     selectVariant(state, [n, v]){
       state.variants.filter((x) =>{

@@ -24,8 +24,13 @@ export default {
 
 </script>
 <style>
-section.main-content {
-    margin: 7rem 20rem;
-}
+  @media(max-width: 920px) {
+    section.main-content {
+        margin: 2rem !important;
+    }
+  }
+  section.main-content {
+      margin: 7rem 20rem;
+  }
 
 </style>
